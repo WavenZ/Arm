@@ -1,0 +1,2 @@
+Dependencies for Project 'TEST', Target 'Target 1': (DO NOT MODIFY !)
+F (.\TEST.s)(0x5BD029B2)(--cpu ARM7TDMI --bi -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 515"--list .\listings\test.lst --xref -o .\objects\test.o --depend .\objects\test.d)

@@ -1,0 +1,99 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;文件名：TEST1.s
+    2 00000000         ;功能：实现两个寄存器相加
+    3 00000000         
+    4 00000000                 AREA             Example1,CODE,READONLY ;声明�
+                                                            ��码段Example1
+    5 00000000 00000001 
+                       SWI_A   EQU              &1
+    6 00000000 00000011 
+                       SWI_B   EQU              &11
+    7 00000000         
+    8 00000000                 ENTRY
+    9 00000000         
+   10 00000000                 CODE32
+   11 00000000         
+   12 00000000 E3A00000 
+                       START   MOV              R0,#0
+   13 00000004 E3A0100A        MOV              R1,#10
+   14 00000008         
+   15 00000008 EB000000 
+                       LOOP    BL               ADD_SUB
+   16 0000000C EAFFFFFD        B                LOOP
+   17 00000010         
+   18 00000010         ADD_SUB
+   19 00000010 E0900001        ADDS             R0,R0,R1
+   20 00000014 E12FFF1E        BX               LR
+   21 00000018                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\test.d -o.\objects\test.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\AR
+M\CMSIS\Include --predefine="__UVISION_VERSION SETA 515" --list=.\listings\test
+.lst TEST.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ADD_SUB 00000010
+
+Symbol: ADD_SUB
+   Definitions
+      At line 18 in file TEST.s
+   Uses
+      At line 15 in file TEST.s
+Comment: ADD_SUB used once
+Example1 00000000
+
+Symbol: Example1
+   Definitions
+      At line 4 in file TEST.s
+   Uses
+      None
+Comment: Example1 unused
+LOOP 00000008
+
+Symbol: LOOP
+   Definitions
+      At line 15 in file TEST.s
+   Uses
+      At line 16 in file TEST.s
+Comment: LOOP used once
+START 00000000
+
+Symbol: START
+   Definitions
+      At line 12 in file TEST.s
+   Uses
+      None
+Comment: START unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+SWI_A 00000001
+
+Symbol: SWI_A
+   Definitions
+      At line 5 in file TEST.s
+   Uses
+      None
+Comment: SWI_A unused
+SWI_B 00000011
+
+Symbol: SWI_B
+   Definitions
+      At line 6 in file TEST.s
+   Uses
+      None
+Comment: SWI_B unused
+2 symbols
+337 symbols in table
